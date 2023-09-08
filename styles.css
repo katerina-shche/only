@@ -27,4 +27,15 @@
     background: rgb(2, 15, 32, 0.4);
     z-index: 25;
 }  
-
+button {
+    position: absolute;
+    top: calc(481 / 1080 * 100%);
+    left: calc(682 / 1920 * 100%);
+    width: 41px;
+    height: 41px;
+    border: none;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.7;
+    
+}
