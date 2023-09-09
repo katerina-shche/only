@@ -8,8 +8,6 @@ console.log(buttons);
 const onLoad = () => {
     overlay.style.width = `${window.innerWidth}px`;
     overlay.style.height = `${(window.innerWidth * 1080 / 1920)}px`; 
-    buttons[0].style.top = 
-    console.log(buttons[0]);
 }
 const onResize = () => {
     container.style.width = `${window.innerWidth}px`;
