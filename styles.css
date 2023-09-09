@@ -25,20 +25,34 @@
     top: 0;
     left: 0;
     background: rgb(2, 15, 32, 0.4);
-    z-index: 25;
+    z-index: 2;
 }  
 button {
     position: absolute;
     width: 41px;
     height: 41px;
     border: none;
-    border-radius: 50%;
+    border-radius: 20px;
     opacity: 0.7;
-    /* transform: translate(-50%, -50%);   */
+    z-index: 100;
+    transition: all 0.1s ease-in;
 }
-button svg path {
-    opacity: 1;
+
+button svg.svg-minus {
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    transform: translate(-50%, -50%);
+    display: none;
 }
+button span {
+    color: var(--White, #FFF);
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    display: none;
+}
+
 #btn0 {
     top: calc(714 / 1080 * 100%);
     left: calc(446 / 1920 * 100%);
@@ -88,4 +102,19 @@ button svg path {
     top: calc(713 / 1080 * 100%);
     left: calc(1593 / 1920 * 100%);
     background: var(--blue);
+}
+button.opened-btn span {
+    display: inline-block;
+}
+button.opened-btn svg.svg-plus {
+    display: none;
+}
+button.opened-btn svg.svg-minus {
+    display: inline-block;
+    /* padding: 15px; */
+}
+button.opened-btn {
+    width: fit-content;
+    padding: 11px 15px 11px 41px;
+    opacity: 1;
 }
