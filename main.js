@@ -1,10 +1,10 @@
+const bkgh = 1080;
+const bkgw = 1920;
 const container = document.getElementById('container');
 const map = document.getElementById('map');
 const overlay = document.getElementById('overlay');
 const buttons = document.getElementsByTagName('button');
-console.log(buttons);
 
-// addEventListener to size overlay on page load
 const onLoad = () => {
     overlay.style.width = `${window.innerWidth}px`;
     overlay.style.height = `${(window.innerWidth * 1080 / 1920)}px`; 
@@ -16,15 +16,25 @@ const onResize = () => {
     map.style.height = `${(window.innerWidth * 1080 / 1920)}px`;
     overlay.style.width = `${window.innerWidth}px`;
     overlay.style.height = `${(window.innerWidth * 1080 / 1920)}px`;
-    console.log(window.innerWidth);
 };
 const onBtnClick = (e) => {
-    if (e.target.closest('.map-btn') && !e.target.closest('.map-btn').classList.contains('opened-btn')) {
-        e.target.closest('.map-btn').classList.add('opened-btn');
-    } else if (e.target.closest('.map-btn') && e.target.closest('.map-btn').classList.contains('opened-btn')) {
-        e.target.closest('.map-btn').classList.remove('opened-btn');
+    if (!e.target.closest('.map-btn')) {
+        return;
+    } else {
+        let btn = e.target.closest('.map-btn');
+        let span = btn.getElementsByTagName('span');
+        console.log(btn)
+    if (btn && !btn.classList.contains('opened-btn')) {
+        btn.classList.add('opened-btn');
+        var delay = setTimeout(() => {span[0].classList.add('opened-span')}, 100);
+    } else if (btn && btn.classList.contains('opened-btn')) {
+        btn.classList.remove('opened-btn');
+        span[0].classList.remove('opened-span');
+        clearTimeout(delay);
     }
 }
+}
+
 window.addEventListener("resize", onResize);
 window.addEventListener("load", onLoad);
 document.addEventListener('click', onBtnClick);

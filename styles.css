@@ -3,10 +3,10 @@
     --white: #fff;
     --blue: #3877EE;
     --green: #6ABF4B;
+    --bkgw: 1920;
+    --bkgh: 1080;
 }
-*,
-::before,
-::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,7 +17,7 @@
 }
 #map { 
     width: 100vw;
-    height: calc(100vw * 1080px / 1920px);
+    height: calc(100vw * var(--bkgh)px / var(--bkgw)px);
     z-index: 1;
 }
 #overlay {
@@ -35,7 +35,13 @@ button {
     border-radius: 20px;
     opacity: 0.7;
     z-index: 100;
-    transition: all 2s ease-in;
+    transition: all 200ms ease-in;
+}
+button svg.svg-plus {
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    transform: translate(-50%, -50%);
 }
 
 button svg.svg-minus {
@@ -50,57 +56,58 @@ button span {
     font-family: Arial;
     font-size: 14px;
     font-weight: 400;
+    opacity: 0;
     display: none;
 }
 
 #btn0 {
-    top: calc(714 / 1080 * 100%);
-    left: calc(446 / 1920 * 100%);
+    top: calc(714 / var(--bkgh) * 100%);
+    left: calc(446 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 #btn1 {
-    top: calc(282 / 1080 * 100%);
-    left: calc(580 / 1920 * 100%);
+    top: calc(282 / var(--bkgh) * 100%);
+    left: calc(580 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 #btn2 {
-    top: calc(482 / 1080 * 100%);
-    left: calc(687 / 1920 * 100%);
+    top: calc(482 / var(--bkgh) * 100%);
+    left: calc(687 / var(--bkgw) * 100%);
     background: var(--green);
 }
 #btn3 {
-    top: calc(629 / 1080 * 100%);
-    left: calc(1081 / 1920 * 100%);
+    top: calc(629 / var(--bkgh) * 100%);
+    left: calc(1081 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 #btn4 {
-    top: calc(805 / 1080 * 100%);
-    left: calc(1122 / 1920 * 100%);
+    top: calc(805 / var(--bkgh) * 100%);
+    left: calc(1122 / var(--bkgw) * 100%);
     background: var(--green);
 }
 #btn5 {
-    top: calc(404 / 1080 * 100%);
-    left: calc(1148 / 1920 * 100%);
+    top: calc(404 / var(--bkgh) * 100%);
+    left: calc(1148 / var(--bkgw) * 100%);
     background: var(--green);
 }
 #btn6 {
-    top: calc(669 / 1080 * 100%);
-    left: calc(1306 / 1920 * 100%);
+    top: calc(669 / var(--bkgh) * 100%);
+    left: calc(1306 / var(--bkgw) * 100%);
     background: var(--green);
 }
 #btn7 {
-    top: calc(225 / 1080 * 100%);
-    left: calc(1373 / 1920 * 100%);
+    top: calc(225 / var(--bkgh) * 100%);
+    left: calc(1373 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 #btn8 {
-    top: calc(475 / 1080 * 100%);
-    left: calc(1414 / 1920 * 100%);
+    top: calc(475 / var(--bkgh) * 100%);
+    left: calc(1414 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 #btn9 {
-    top: calc(713 / 1080 * 100%);
-    left: calc(1593 / 1920 * 100%);
+    top: calc(713 / var(--bkgh) * 100%);
+    left: calc(1593 / var(--bkgw) * 100%);
     background: var(--blue);
 }
 button.opened-btn span {
@@ -117,4 +124,8 @@ button.opened-btn {
     padding: 11px 15px 11px 41px;
     opacity: 1;
     border-radius: 20px;
+}
+button.opened-btn span.opened-span {
+    opacity: 1;
+    transition: all 100ms ease-in-out;
 }
