@@ -29,9 +29,9 @@ const onBtnClick = (e) => {
         btn.classList.add('opened-btn');
         var delay = setTimeout(() => {span[0].classList.add('opened-span')}, 100);
     } else if (btn && btn.classList.contains('opened-btn')) {
+        clearTimeout(delay);
         btn.classList.remove('opened-btn');
         span[0].classList.remove('opened-span');
-        clearTimeout(delay);
     }
 }
 }
