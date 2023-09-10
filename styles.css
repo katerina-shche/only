@@ -35,7 +35,7 @@ button {
     border-radius: 20px;
     opacity: 0.7;
     z-index: 100;
-    transition: all 0.1s ease-in;
+    transition: all 2s ease-in;
 }
 
 button svg.svg-minus {
@@ -111,10 +111,10 @@ button.opened-btn svg.svg-plus {
 }
 button.opened-btn svg.svg-minus {
     display: inline-block;
-    /* padding: 15px; */
 }
 button.opened-btn {
     width: fit-content;
     padding: 11px 15px 11px 41px;
     opacity: 1;
+    border-radius: 20px;
 }

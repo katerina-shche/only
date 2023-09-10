@@ -18,5 +18,13 @@ const onResize = () => {
     overlay.style.height = `${(window.innerWidth * 1080 / 1920)}px`;
     console.log(window.innerWidth);
 };
+const onBtnClick = (e) => {
+    if (e.target.closest('.map-btn') && !e.target.closest('.map-btn').classList.contains('opened-btn')) {
+        e.target.closest('.map-btn').classList.add('opened-btn');
+    } else if (e.target.closest('.map-btn') && e.target.closest('.map-btn').classList.contains('opened-btn')) {
+        e.target.closest('.map-btn').classList.remove('opened-btn');
+    }
+}
 window.addEventListener("resize", onResize);
 window.addEventListener("load", onLoad);
+document.addEventListener('click', onBtnClick);
